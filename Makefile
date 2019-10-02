@@ -6,3 +6,6 @@ publish:
 	publish --dry-run
 lint:
 	npx eslint src/bin/brain-games.js
+build:
+	rm -rf dist
+	npm run build
