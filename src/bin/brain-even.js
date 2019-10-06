@@ -20,22 +20,22 @@ const parityCheck = () => {
       console.log('Correct!');
     } else if (findOutAnEvenNumber(randomNumber) === true && userAnswer === 'no') {
       counterRightAnswer = 0;
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${findOutTheName.userName}!`);
     } else if (findOutAnEvenNumber(randomNumber) === true && userAnswer !== 'no') {
       counterRightAnswer = 0;
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${findOutTheName.userName}!`);
     }
     if (findOutAnEvenNumber(randomNumber) === false && userAnswer === 'no') {
       counterRightAnswer += 1;
       console.log('Correct!');
     } else if (findOutAnEvenNumber(randomNumber) === false && userAnswer === 'yes') {
       counterRightAnswer = 0;
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${findOutTheName.userName}!`);
     } else if (findOutAnEvenNumber(randomNumber) === false && userAnswer !== 'no') {
       counterRightAnswer = 0;
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${findOutTheName.userName}!`);
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${findOutTheName.userName}!`);
 };
 parityCheck();

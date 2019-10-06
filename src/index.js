@@ -13,5 +13,3 @@ export const findOutAnEvenNumber = (number) => {
 };
 
 export const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-export default findOutTheName;
