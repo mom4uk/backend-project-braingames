@@ -5,6 +5,14 @@ export const findOutTheName = () => {
   console.log(`Hello, ${userName}!`);
 };
 
+export const greeting = () => {
+  console.log('Welcome to the Brain Games!');
+};
+
+export const abstract = (str) => {
+  console.log(`${str}`);
+};
+
 export const findOutAnEvenNumber = (number) => {
   if (number % 2 === 0) {
     return true;

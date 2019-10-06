@@ -1,10 +1,12 @@
 import readlineSync from 'readline-sync';
 
 import {
-  findOutTheName, findOutAnEvenNumber, randomInteger,
+  findOutTheName, findOutAnEvenNumber, randomInteger, greeting, abstract,
 } from '..';
 
-console.log('Welcome to the Brain Games!\nAnswer "yes" if the number is even, otherwise answer "no".');
+greeting();
+
+abstract('Answer "yes" if the number is even, otherwise answer "no".');
 
 findOutTheName();
 

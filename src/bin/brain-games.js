@@ -1,5 +1,5 @@
 
-import findOutTheName from '..';
+import { findOutTheName, greeting } from '..';
 
-console.log('Welcome to the Brain Games!');
+greeting();
 findOutTheName();
