@@ -16,15 +16,15 @@ export const frame = () => {
   let accumulateRightAnswers = 0;
 
   while (accumulateRightAnswers < 3) {
-    if (correctAnswer() === userAnswer) {
+    if (userAnswer === correctAnswer()) {
       accumulateRightAnswers += 1;
       console.log('Correct!');
     }
-    if (correctAnswer() !== userAnswer) {
+    else if (userAnswer !== correctAnswer()) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer()}.\nLet's try again, ${userName}!`);
       return;
     }
-    if (accumulateRightAnswers === 3) {
+    else if (accumulateRightAnswers === 3) {
       console.log(`Congratulations, ${userName}!`);
     }
   }

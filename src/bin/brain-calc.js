@@ -20,7 +20,13 @@ export const gameQuestion = () => {
 };
 
 export const correctAnswer = () => {
-  
+  if (random === 1) {
+    return firstRandomNumber + secondRandomNumber;
+  }
+  if (random === 2) {
+    return firstRandomNumber - secondRandomNumber;
+  }
+  return firstRandomNumber * secondRandomNumber;
 };
 
 frame();
