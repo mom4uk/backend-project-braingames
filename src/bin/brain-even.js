@@ -1,12 +1,13 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
 import {
-  findOutAnEvenNumber, randomInteger, greeting, abstract,
+  findOutAnEvenNumber, randomInteger, printGreeting, printDescription,
 } from '..';
 
-greeting();
+printGreeting();
 
-abstract('Answer "yes" if the number is even, otherwise answer "no".');
+printDescription('Answer "yes" if the number is even, otherwise answer "no".');
 
 
 let counterRightAnswer = 0;

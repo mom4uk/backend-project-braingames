@@ -1,5 +1,5 @@
+#!/usr/bin/env node
+import { findOutTheNameOfPlayer, printGreeting } from '..';
 
-import { findOutTheName, greeting } from '..';
-
-greeting();
-findOutTheName();
+printGreeting();
+findOutTheNameOfPlayer();
