@@ -8,25 +8,29 @@ export const textDescription = 'What is the result of the expression?';
 
 const firstRandomNumber = randomInteger(1, 100);
 const secondRandomNumber = randomInteger(1, 100);
-const random = randomInteger(1, 3);
+const numberRandomOperator = randomInteger(1, 3);
+
 export const gameQuestion = () => {
-  if (random === 1) {
+  if (numberRandomOperator === 1) {
     return `${firstRandomNumber} + ${secondRandomNumber}`;
   }
-  if (random === 2) {
+  if (numberRandomOperator === 2) {
     return `${firstRandomNumber} - ${secondRandomNumber}`;
   }
   return `${firstRandomNumber} * ${secondRandomNumber}`;
 };
-
+let result = '';
 export const correctAnswer = () => {
-  if (random === 1) {
-    return firstRandomNumber + secondRandomNumber;
+  if (numberRandomOperator === 1) {
+    result = firstRandomNumber + secondRandomNumber;
+    return `${result}`;
   }
-  if (random === 2) {
-    return firstRandomNumber - secondRandomNumber;
+  if (numberRandomOperator === 2) {
+    result = firstRandomNumber - secondRandomNumber;
+    return `${result}`;
   }
-  return firstRandomNumber * secondRandomNumber;
+  result = firstRandomNumber * secondRandomNumber;
+  return `${result}`;
 };
 
 frame();
