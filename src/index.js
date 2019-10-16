@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   textDescription, correctAnswer, gameQuestion,
-} from '/users/mikhailmanov/Documents/Dev/backend-project-lvl1/src/bin/brain-calc';
+} from './bin/brain-calc';
 
 export const frame = () => {
   console.log('Welcome to the Brain Games!');
@@ -19,12 +19,10 @@ export const frame = () => {
     if (userAnswer === correctAnswer()) {
       accumulateRightAnswers += 1;
       console.log('Correct!');
-    }
-    else if (userAnswer !== correctAnswer()) {
+    } else if (userAnswer !== correctAnswer()) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer()}.\nLet's try again, ${userName}!`);
       return;
-    }
-    else if (accumulateRightAnswers === 3) {
+    } else if (accumulateRightAnswers === 3) {
       console.log(`Congratulations, ${userName}!`);
     }
   }
