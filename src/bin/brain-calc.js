@@ -1,14 +1,10 @@
 #!/usr/bin/env node
 
 import {
-  randomInteger, frame,
+  randomInteger, frame, firstRandomNumber, secondRandomNumber, numberRandomOperator,
 } from '..';
 
 export const textDescription = 'What is the result of the expression?';
-
-const firstRandomNumber = randomInteger(1, 100);
-const secondRandomNumber = randomInteger(1, 100);
-const numberRandomOperator = randomInteger(1, 3);
 
 export const gameQuestion = () => {
   if (numberRandomOperator === 1) {
@@ -19,7 +15,9 @@ export const gameQuestion = () => {
   }
   return `${firstRandomNumber} * ${secondRandomNumber}`;
 };
+
 let result = '';
+
 export const correctAnswer = () => {
   if (numberRandomOperator === 1) {
     result = firstRandomNumber + secondRandomNumber;

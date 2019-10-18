@@ -7,6 +7,10 @@ import {
 export const randomInteger = (minValue, maxValue) => Math.floor(Math.random()
   * (maxValue - minValue + 1));
 
+export let firstRandomNumber = 0;
+export let secondRandomNumber = 0;
+export let numberRandomOperator = 0;
+
 export const frame = () => {
   console.log('Welcome to the Brain Games!');
   console.log(`${textDescription}`);
@@ -16,6 +20,9 @@ export const frame = () => {
 
   let accumulateRightAnswers = 0;
   while (accumulateRightAnswers < 3) {
+    numberRandomOperator = randomInteger(1, 3);
+    firstRandomNumber = randomInteger(1, 100);
+    secondRandomNumber = randomInteger(1, 100);
     console.log(`Question: ${gameQuestion()}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer()) {
