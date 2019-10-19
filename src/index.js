@@ -20,9 +20,9 @@ export const frame = () => {
 
   let accumulateRightAnswers = 0;
   while (accumulateRightAnswers < 3) {
-    numberRandomOperator = randomInteger(1, 3);
     firstRandomNumber = randomInteger(1, 100);
     secondRandomNumber = randomInteger(1, 100);
+    numberRandomOperator = randomInteger(1, 3);
     console.log(`Question: ${gameQuestion()}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer()) {

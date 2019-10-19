@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {
-  randomInteger, frame, firstRandomNumber, secondRandomNumber, numberRandomOperator,
+  frame, firstRandomNumber, secondRandomNumber, numberRandomOperator,
 } from '..';
 
 export const textDescription = 'What is the result of the expression?';
