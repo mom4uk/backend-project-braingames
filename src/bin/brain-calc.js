@@ -1,34 +1,33 @@
 #!/usr/bin/env node
 
 import {
-  frame, firstRandomNumber, secondRandomNumber, numberRandomOperator,
+  frame, randomInteger,
 } from '..';
 
-export const textDescription = 'What is the result of the expression?';
+const textDescription = 'What is the result of the expression?';
 
-export const gameQuestion = () => {
-  if (numberRandomOperator === 1) {
-    return `${firstRandomNumber} + ${secondRandomNumber}`;
-  }
-  if (numberRandomOperator === 2) {
-    return `${firstRandomNumber} - ${secondRandomNumber}`;
-  }
-  return `${firstRandomNumber} * ${secondRandomNumber}`;
+const getExpressionAndCorrectAnswer = () => {
+  const getAnswerExpression = (firstNumber, secondNumber, operator) => {
+    switch (operator) {
+      case '+':
+        return String(firstNumber + secondNumber);
+      case '-':
+        return String(firstNumber - secondNumber);
+      default: return String(firstNumber * secondNumber);
+    }
+  };
+
+  const operators = ['+', '-', '*'];
+  const randomOperator = operators[randomInteger(0, operators.length)];
+
+  const firstRandNum = randomInteger(1, 100);
+  const secondRandNum = randomInteger(1, 100);
+
+  const getQuestion = () => `${firstRandNum} ${randomOperator} ${secondRandNum}`;
+
+  const getCorrectAnswer = () => getAnswerExpression(firstRandNum, secondRandNum, randomOperator);
+
+  return [getQuestion, getCorrectAnswer];
 };
 
-let result = '';
-
-export const correctAnswer = () => {
-  if (numberRandomOperator === 1) {
-    result = firstRandomNumber + secondRandomNumber;
-    return `${result}`;
-  }
-  if (numberRandomOperator === 2) {
-    result = firstRandomNumber - secondRandomNumber;
-    return `${result}`;
-  }
-  result = firstRandomNumber * secondRandomNumber;
-  return `${result}`;
-};
-
-frame();
+frame(textDescription, getExpressionAndCorrectAnswer);
