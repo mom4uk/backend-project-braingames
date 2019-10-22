@@ -7,27 +7,27 @@ import {
 const textDescription = 'What is the result of the expression?';
 
 const getExpressionAndCorrectAnswer = () => {
-  const getAnswerExpression = (firstNumber, secondNumber, operator) => {
+  const getExpression = (firstNumber, secondNumber, operator) => {
     switch (operator) {
       case '+':
-        return String(firstNumber + secondNumber);
+        return firstNumber + secondNumber;
       case '-':
-        return String(firstNumber - secondNumber);
-      default: return String(firstNumber * secondNumber);
+        return firstNumber - secondNumber;
+      default: return firstNumber * secondNumber;
     }
   };
 
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[randomInteger(0, operators.length)];
+  const randomOperator = operators[randomInteger(1, operators.length)];
 
   const firstRandNum = randomInteger(1, 100);
   const secondRandNum = randomInteger(1, 100);
 
-  const getQuestion = () => `${firstRandNum} ${randomOperator} ${secondRandNum}`;
+  const question = `${firstRandNum} ${randomOperator} ${secondRandNum}`;
 
-  const getCorrectAnswer = () => getAnswerExpression(firstRandNum, secondRandNum, randomOperator);
+  const getCorrectAnswer = String(getExpression(firstRandNum, secondRandNum, randomOperator));
 
-  return [getQuestion, getCorrectAnswer];
+  return [question, getCorrectAnswer];
 };
 
 frame(textDescription, getExpressionAndCorrectAnswer);

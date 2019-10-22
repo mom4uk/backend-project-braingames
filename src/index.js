@@ -12,8 +12,8 @@ export const frame = (textDescription, getExpressionAndCorrectAnswer) => {
 
   let accumulateRightAnswers = 0;
   while (accumulateRightAnswers < 3) {
-    const [getQuestion, getCorrectAnswer] = getExpressionAndCorrectAnswer();
-    console.log(`Question: ${getQuestion}`);
+    const [question, getCorrectAnswer] = getExpressionAndCorrectAnswer();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === getCorrectAnswer) {
       accumulateRightAnswers += 1;
