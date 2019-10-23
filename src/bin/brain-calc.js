@@ -6,7 +6,7 @@ import {
 
 const textDescription = 'What is the result of the expression?';
 
-const getExpressionAndCorrectAnswer = () => {
+const getTaskAndCorrectAnswer = () => {
   const getExpression = (firstNumber, secondNumber, operator) => {
     switch (operator) {
       case '+':
@@ -30,4 +30,4 @@ const getExpressionAndCorrectAnswer = () => {
   return [question, getCorrectAnswer];
 };
 
-frame(textDescription, getExpressionAndCorrectAnswer);
+frame(textDescription, getTaskAndCorrectAnswer);

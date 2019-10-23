@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 export const randomInteger = (minValue, maxValue) => Math.floor(Math.random()
   * (maxValue - minValue + 1));
 
-export const frame = (textDescription, getExpressionAndCorrectAnswer) => {
+export const frame = (textDescription, getTaskAndCorrectAnswer) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${textDescription}`);
 
@@ -12,7 +12,7 @@ export const frame = (textDescription, getExpressionAndCorrectAnswer) => {
 
   let accumulateRightAnswers = 0;
   while (accumulateRightAnswers < 3) {
-    const [question, getCorrectAnswer] = getExpressionAndCorrectAnswer();
+    const [question, getCorrectAnswer] = getTaskAndCorrectAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === getCorrectAnswer) {
