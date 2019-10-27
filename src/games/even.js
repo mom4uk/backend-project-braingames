@@ -16,7 +16,6 @@ const getTaskAndCorrectAnswer = () => {
     }
     return 'no';
   };
-
   const getCorrectAnswer = String(findOutAnEvenNumber(question));
 
   return [question, getCorrectAnswer];

@@ -11,10 +11,14 @@ const getTaskAndCorrectAnswer = () => {
   const secondRandNum = randomInteger(1, 100);
   const question = `${firstRandNum} ${secondRandNum}`;
   const answer = (firstNum, secondNum) => {
-    if (firstNum %) {
-
+    if (firstNum % secondNum === 0) {
+      return secondNum;
     }
+    return answer(secondNum, firstNum % secondNum);
   };
 
-  const getCorrectAnswer = 
+  const getCorrectAnswer = String(answer(firstRandNum, secondRandNum));
+  return [question, getCorrectAnswer];
 };
+const startGameGcd = () => frame(textDescription, getTaskAndCorrectAnswer);
+export default startGameGcd;
