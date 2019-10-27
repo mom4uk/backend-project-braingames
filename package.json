@@ -1,6 +1,6 @@
 {
   "name": "firstbackendproject",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "First backend project on Hexlet",
   "main": "index.js",
   "bin": {
