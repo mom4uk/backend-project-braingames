@@ -7,17 +7,32 @@ import {
 const textDescription = 'What number is missing in the progression?';
 
 const getTaskAndCorrectAnswer = () => {
-  let arrayProgression = [];
-  const getArithmeticProgression = (progressionMember, progressionDifference) => {
-    if (arrayProgression.length === 9) {
-      return ;
+  const progressionMember = randomInteger(0, 100);
+  const progressionDifference = randomInteger(0, 100);
+
+  let arrayProgr = [];
+  const getArithmeticProgression = (progrMember, progrDifference) => {
+    if (arrayProgr.length === 9) {
+      return arrayProgr;
     }
-    return [getArithmeticProgression(progressionMember + progressionDifference, progressionDifference)];  
-  }
+    arrayProgr.push(progrMember);
+    getArithmeticProgression(progrMember + progrDifference, progrDifference);
+  };
+  getArithmeticProgression(progressionMember, progressionDifference);
+
+  let answer = 0;
+
   const getQuestion = (array) => {
-    const counter = randomInteger(0,9);
-    if (counter === array.length[randomInteger(0,9)]) {
-      return 
-    }
-  }
+    let newArray = array.map(function(item) {
+      for (let i = 0; i < array.length; i += 1) {
+        randomInteger(0, 9) === array[i] ? array[i] = '..' : item;
+      }
+    })
+    return newArray;
+  };
+  const question = String(getQuestion(arrayProgr));
+  const getCorrectAnswer = answer;
+  return [question, getCorrectAnswer];
 };
+const startGameProgression = () => frame(textDescription, getTaskAndCorrectAnswer);
+export default startGameProgression;
