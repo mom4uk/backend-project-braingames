@@ -10,25 +10,26 @@ const getTaskAndCorrectAnswer = () => {
   const progressionMember = randomInteger(0, 100);
   const progressionDifference = randomInteger(0, 100);
 
-  let arrayProgr = [];
+  const arrayProgr = [];
+
   const getArithmeticProgression = (progrMember, progrDifference) => {
     if (arrayProgr.length === 9) {
       return arrayProgr;
     }
     arrayProgr.push(progrMember);
-    getArithmeticProgression(progrMember + progrDifference, progrDifference);
+    return getArithmeticProgression(progrMember + progrDifference, progrDifference);
   };
+
   getArithmeticProgression(progressionMember, progressionDifference);
 
-  let answer = 0;
+  let answer = '';
 
   const getQuestion = (array) => {
-    let newArray = array.map(function(item) {
-      for (let i = 0; i < array.length; i += 1) {
-        randomInteger(0, 9) === array[i] ? array[i] = '..' : item;
-      }
-    })
-    return newArray;
+    for (let i = randomInteger(0, 9); i <= 9; i += 1) {
+      answer = `${array[i]}`;
+      array[i] = '..';
+      return array.join(' ');
+    }
   };
   const question = String(getQuestion(arrayProgr));
   const getCorrectAnswer = answer;
