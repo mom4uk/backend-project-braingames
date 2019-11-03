@@ -30,6 +30,7 @@ const getTaskAndCorrectAnswer = () => {
       array[i] = '..';
       return array.join(' ');
     }
+    return array;
   };
   const question = String(getQuestion(arrayProgr));
   const getCorrectAnswer = answer;
