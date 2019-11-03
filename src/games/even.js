@@ -4,7 +4,7 @@ import {
   frame, randomInteger,
 } from '..';
 
-const textDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+const descriptionTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getTaskAndCorrectAnswer = () => {
   const randomNumber = randomInteger(1, 100);
@@ -16,10 +16,10 @@ const getTaskAndCorrectAnswer = () => {
     }
     return 'no';
   };
-  const getCorrectAnswer = String(findOutAnEvenNumber(question));
+  const correctAnswer = String(findOutAnEvenNumber(question));
 
-  return [question, getCorrectAnswer];
+  return [question, correctAnswer];
 };
 
-const startGameEven = () => frame(textDescription, getTaskAndCorrectAnswer);
+const startGameEven = () => frame(descriptionTask, getTaskAndCorrectAnswer);
 export default startGameEven;

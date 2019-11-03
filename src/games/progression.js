@@ -4,19 +4,19 @@ import {
   frame, randomInteger,
 } from '..';
 
-const textDescription = 'What number is missing in the progression?';
+const descriptionTask = 'What number is missing in the progression?';
 
 const getTaskAndCorrectAnswer = () => {
   const progressionMember = randomInteger(0, 100);
   const progressionDifference = randomInteger(0, 100);
 
-  const numbersProgression = [];
+  const numbersArithmeticProgression = [];
 
   const getArithmeticProgression = (progrMember, progrDifference) => {
-    if (numbersProgression.length === 9) {
-      return numbersProgression;
+    if (numbersArithmeticProgression.length === 9) {
+      return numbersArithmeticProgression;
     }
-    numbersProgression.push(progrMember);
+    numbersArithmeticProgression.push(progrMember);
     return getArithmeticProgression(progrMember + progrDifference, progrDifference);
   };
 
@@ -32,9 +32,9 @@ const getTaskAndCorrectAnswer = () => {
     }
     return array;
   };
-  const question = getQuestion(numbersProgression);
-  const getCorrectAnswer = answer;
-  return [question, getCorrectAnswer];
+  const question = getQuestion(numbersArithmeticProgression);
+  const correctAnswer = answer;
+  return [question, correctAnswer];
 };
-const startGameProgression = () => frame(textDescription, getTaskAndCorrectAnswer);
+const startGameProgression = () => frame(descriptionTask, getTaskAndCorrectAnswer);
 export default startGameProgression;
