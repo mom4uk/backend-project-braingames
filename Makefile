@@ -9,7 +9,7 @@ start:
 publish: 
 	npm publish --dry-run
 lint:
-	npx eslint src/bin/brain-games.js
+	npx eslint src/bin/brain-even.js
 build:
 	rm -rf dist
 	npm run build
