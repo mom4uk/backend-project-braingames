@@ -10,30 +10,30 @@ const getTaskAndCorrectAnswer = () => {
   const progressionMember = randomInteger(0, 100);
   const progressionDifference = randomInteger(0, 100);
 
-  const numbersArithmeticProgression = [];
-
   const getArithmeticProgression = (progrMember, progrDifference) => {
-    if (numbersArithmeticProgression.length === 9) {
-      return numbersArithmeticProgression;
-    }
-    numbersArithmeticProgression.push(progrMember);
-    return getArithmeticProgression(progrMember + progrDifference, progrDifference);
-  };
-
-  getArithmeticProgression(progressionMember, progressionDifference);
-
-  let answer = '';
-
-  const getQuestion = (array) => {
-    for (let i = randomInteger(0, 9); i <= 9; i += 1) {
-      answer = `${array[i]}`;
-      array[i] = '..';
-      return array.join(' ');
+    const array = [progrMember];
+    for (let i = 0; i < 9; i += 1) {
+      array.push(array[i] + progrDifference);
     }
     return array;
   };
-  const question = getQuestion(numbersArithmeticProgression);
-  const correctAnswer = answer;
+
+  const numbersArithmProgr = getArithmeticProgression(progressionMember, progressionDifference);
+  const randomIndex = randomInteger(0, 9);
+
+  let replacedNumberInArray = '';
+
+  const getQuestion = (array) => {
+    for (let i = 0; i < array.length; i += 1) {
+      if (randomIndex === i) {
+        replacedNumberInArray = `${array[i]}`;
+      }
+    }
+    array.splice(randomIndex, 1, '..');
+    return array.join(' ');
+  };
+  const question = getQuestion(numbersArithmProgr);
+  const correctAnswer = replacedNumberInArray;
   return [question, correctAnswer];
 };
 const startGameProgression = () => frame(descriptionTask, getTaskAndCorrectAnswer);
