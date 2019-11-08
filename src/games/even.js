@@ -9,13 +9,16 @@ const getTaskAndCorrectAnswer = () => {
   const randomNumber = randomInteger(1, 100);
   const question = randomNumber;
 
-  const findOutAnEvenNumber = (value) => {
-    if (value % 2 === 0) {
+  const findOutAnEvenNumber = (value) => value % 2 === 0;
+
+  const booleanTransformsIntoYesOrNo = (boolean) => {
+    if (boolean) {
       return 'yes';
     }
     return 'no';
   };
-  const correctAnswer = String(findOutAnEvenNumber(question));
+
+  const correctAnswer = booleanTransformsIntoYesOrNo(findOutAnEvenNumber(randomNumber));
 
   return [question, correctAnswer];
 };

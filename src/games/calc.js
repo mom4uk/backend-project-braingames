@@ -17,7 +17,7 @@ const getTaskAndCorrectAnswer = () => {
   };
 
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[randomInteger(1, 3)];
+  const randomOperator = operators[randomInteger(1, operators.length)];
 
   const firstRandNum = randomInteger(1, 100);
   const secondRandNum = randomInteger(1, 100);
