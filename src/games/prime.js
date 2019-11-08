@@ -17,7 +17,7 @@ const getTaskAndCorrectAnswer = () => {
     return 'yes';
   };
 
-  const question = `${randomNumber}`;
+  const question = randomNumber;
   const correctAnswer = findOutIfAPrimeNumber(randomNumber);
 
   return [question, correctAnswer];
