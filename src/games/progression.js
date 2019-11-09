@@ -10,9 +10,9 @@ const getTaskAndCorrectAnswer = () => {
   const progressionDifference = randomInteger(0, 100);
 
   const getArithmeticProgression = (progrMember, progrDifference) => {
-    const array = [progrMember];
+    const array = [];
     for (let i = 0; i < 9; i += 1) {
-      array.push(array[i] + progrDifference);
+      array.push(progrMember + progrDifference * i);
     }
     return array;
   };
