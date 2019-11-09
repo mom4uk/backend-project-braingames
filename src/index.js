@@ -10,21 +10,18 @@ export const frame = (descriptionTask, getTaskAndCorrectAnswer) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  let accumulateRightAnswers = 0;
-
-  while (accumulateRightAnswers < 3) {
+  for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = getTaskAndCorrectAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
-      accumulateRightAnswers += 1;
       console.log('Correct!');
+      if (i === 2) {
+        console.log(`Congratulations, ${userName}!`);
+      }
     } else if (userAnswer !== correctAnswer) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
       return;
-    }
-    if (accumulateRightAnswers === 3) {
-      console.log(`Congratulations, ${userName}!`);
     }
   }
 };
