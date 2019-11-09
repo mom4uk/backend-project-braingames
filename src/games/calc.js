@@ -5,17 +5,19 @@ import {
 
 const descriptionTask = 'What is the result of the expression?';
 
-const getTaskAndCorrectAnswer = () => {
-  const getExpression = (firstNumber, secondNumber, operator) => {
-    switch (operator) {
-      case '+':
-        return firstNumber + secondNumber;
-      case '-':
-        return firstNumber - secondNumber;
-      default: return firstNumber * secondNumber;
-    }
-  };
+const getExpression = (firstNumber, secondNumber, operator) => {
+  switch (operator) {
+    case '+':
+      return firstNumber + secondNumber;
+    case '-':
+      return firstNumber - secondNumber;
+    case '*':
+      return firstNumber * secondNumber;
+    default: return false;
+  }
+};
 
+const getTaskAndCorrectAnswer = () => {
   const operators = ['+', '-', '*'];
   const randomOperator = operators[randomInteger(1, operators.length)];
 
