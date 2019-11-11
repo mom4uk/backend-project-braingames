@@ -9,11 +9,7 @@ start:
 publish: 
 	npm publish --dry-run
 lint:
-	npx eslint ./brain-even.js
-	npx eslint ./brain-calc.js
-	npx eslint ./brain-gcd.js
-	npx eslint ./brain-progression.js
-	npx eslint ./brain-prime.js
+	npx eslint ./src
 build:
 	rm -rf dist
 	npm run build
