@@ -1,24 +1,25 @@
 
-import {
-  frame, randomInteger,
-} from '..';
+import frame from '..';
+
+import randomNumber from '../utils';
 
 const descriptionTask = 'What number is missing in the progression?';
 
 const getTaskAndCorrectAnswer = () => {
-  const progressionMember = randomInteger(0, 100);
-  const progressionDifference = randomInteger(0, 100);
+  const progressionMember = randomNumber(0, 100);
+  const progressionDifference = randomNumber(0, 100);
+  const lengthProgression = 9;
 
   const getArithmeticProgression = (progrMember, progrDifference) => {
     const array = [];
-    for (let i = 0; i < 9; i += 1) {
+    for (let i = 0; i < lengthProgression; i += 1) {
       array.push(progrMember + progrDifference * i);
     }
     return array;
   };
 
   const numbersArithmProgr = getArithmeticProgression(progressionMember, progressionDifference);
-  const randomIndex = randomInteger(0, 9);
+  const randomIndex = randomNumber(0, 9);
 
   let replacedNumberInArray = '';
 

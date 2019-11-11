@@ -1,24 +1,15 @@
 
-import {
-  frame, randomInteger,
-} from '..';
+import frame from '..';
+
+import randomNumber from '../utils';
 
 const descriptionTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getTaskAndCorrectAnswer = () => {
-  const randomNumber = randomInteger(1, 100);
-  const question = randomNumber;
+  const question = randomNumber(1, 100);
 
-  const findOutAnEvenNumber = (value) => value % 2 === 0;
-
-  const booleanTransformsIntoYesOrNo = (boolean) => {
-    if (boolean) {
-      return 'yes';
-    }
-    return 'no';
-  };
-
-  const correctAnswer = booleanTransformsIntoYesOrNo(findOutAnEvenNumber(randomNumber));
+  const isEven = (value) => value % 2 === 0;
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
   return [question, correctAnswer];
 };

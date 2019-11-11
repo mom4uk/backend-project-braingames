@@ -1,11 +1,11 @@
 
-import {
-  frame, randomInteger,
-} from '..';
+import frame from '..';
+
+import randomNumber from '../utils';
 
 const descriptionTask = 'What is the result of the expression?';
 
-const getExpression = (firstNumber, secondNumber, operator) => {
+const getResult = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case '+':
       return firstNumber + secondNumber;
@@ -19,14 +19,14 @@ const getExpression = (firstNumber, secondNumber, operator) => {
 
 const getTaskAndCorrectAnswer = () => {
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[randomInteger(1, operators.length)];
+  const randomOperator = operators[randomNumber(1, operators.length)];
 
-  const firstRandNum = randomInteger(1, 100);
-  const secondRandNum = randomInteger(1, 100);
+  const firstRandNum = randomNumber(1, 100);
+  const secondRandNum = randomNumber(1, 100);
 
   const question = `${firstRandNum} ${randomOperator} ${secondRandNum}`;
 
-  const correctAnswer = String(getExpression(firstRandNum, secondRandNum, randomOperator));
+  const correctAnswer = String(getResult(firstRandNum, secondRandNum, randomOperator));
 
   return [question, correctAnswer];
 };
