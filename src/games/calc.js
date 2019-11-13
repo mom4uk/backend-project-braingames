@@ -1,35 +1,26 @@
-
-import frame from '..';
-
-import randomNumber from '../utils';
+import startTheEngine from '..';
+import randomValue from '../utils';
 
 const descriptionTask = 'What is the result of the expression?';
-
-const getResult = (firstNumber, secondNumber, operator) => {
+const getResult = (firstValue, secondValue, operator) => {
   switch (operator) {
     case '+':
-      return firstNumber + secondNumber;
+      return firstValue + secondValue;
     case '-':
-      return firstNumber - secondNumber;
+      return firstValue - secondValue;
     case '*':
-      return firstNumber * secondNumber;
+      return firstValue * secondValue;
     default: return false;
   }
 };
-
+const operators = ['+', '-', '*'];
 const getTaskAndCorrectAnswer = () => {
-  const operators = ['+', '-', '*'];
-  const randomOperator = operators[randomNumber(1, operators.length)];
-
-  const firstRandNum = randomNumber(1, 100);
-  const secondRandNum = randomNumber(1, 100);
-
-  const question = `${firstRandNum} ${randomOperator} ${secondRandNum}`;
-
-  const correctAnswer = String(getResult(firstRandNum, secondRandNum, randomOperator));
-
+  const randomOperator = operators[randomValue(1, operators.length)];
+  const firstRandValue = randomValue(1, 100);
+  const secondRandValue = randomValue(1, 100);
+  const question = `${firstRandValue} ${randomOperator} ${secondRandValue}`;
+  const correctAnswer = String(getResult(firstRandValue, secondRandValue, randomOperator));
   return [question, correctAnswer];
 };
-
-const startGameCalc = () => frame(descriptionTask, getTaskAndCorrectAnswer);
+const startGameCalc = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
 export default startGameCalc;

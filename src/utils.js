@@ -1,4 +1,3 @@
-
-const randomNumber = (minValue, maxValue) => Math.floor(Math.random()
+const randomValue = (minValue, maxValue) => Math.floor(Math.random()
   * (maxValue - minValue + 1));
-export { randomNumber as default };
+export { randomValue as default };
