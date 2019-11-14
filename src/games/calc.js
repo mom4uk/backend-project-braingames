@@ -20,7 +20,6 @@ const getTaskAndCorrectAnswer = () => {
   const secondRandValue = randomValue(1, 100);
   const question = `${firstRandValue} ${randomOperator} ${secondRandValue}`;
   const correctAnswer = String(getResult(firstRandValue, secondRandValue, randomOperator));
-  console.log(operators.length, randomOperator);
   return [question, correctAnswer];
 };
 const startGameCalc = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
