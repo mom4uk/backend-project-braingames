@@ -10,16 +10,17 @@ const getResult = (firstValue, secondValue, operator) => {
       return firstValue - secondValue;
     case '*':
       return firstValue * secondValue;
-    default: return false;
+    default: return null;
   }
 };
 const operators = ['+', '-', '*'];
 const getTaskAndCorrectAnswer = () => {
-  const randomOperator = operators[randomValue(1, operators.length)];
+  const randomOperator = operators[randomValue(0, operators.length - 1)];
   const firstRandValue = randomValue(1, 100);
   const secondRandValue = randomValue(1, 100);
   const question = `${firstRandValue} ${randomOperator} ${secondRandValue}`;
   const correctAnswer = String(getResult(firstRandValue, secondRandValue, randomOperator));
+  console.log(operators.length, randomOperator);
   return [question, correctAnswer];
 };
 const startGameCalc = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
