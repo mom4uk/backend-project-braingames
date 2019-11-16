@@ -2,11 +2,11 @@ import startTheEngine from '..';
 import randomValue from '../utils';
 
 const descriptionTask = 'What number is missing in the progression?';
-const lengthProgression = 9;
+const lengthProgression = 10;
 let replacedNumberInArray = '';
 const getArithmeticProgression = (progrMember, progrDifference) => {
   const array = [];
-  for (let i = 0; i < lengthProgression; i += 1) {
+  for (let i = 0; i <= lengthProgression; i += 1) {
     array.push(progrMember + progrDifference * i);
   }
   return array;
@@ -14,7 +14,7 @@ const getArithmeticProgression = (progrMember, progrDifference) => {
 const getTaskAndCorrectAnswer = () => {
   const progressionMember = randomValue(0, 100);
   const progressionDifference = randomValue(0, 100);
-  const randomIndex = randomValue(0, 9);
+  const randomIndex = randomValue(0, lengthProgression);
   const numbersArithmProgr = getArithmeticProgression(progressionMember, progressionDifference);
   const getQuestion = (array) => {
     for (let i = 0; i < array.length; i += 1) {

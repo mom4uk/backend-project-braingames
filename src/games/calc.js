@@ -2,6 +2,7 @@ import startTheEngine from '..';
 import randomValue from '../utils';
 
 const descriptionTask = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 const getResult = (firstValue, secondValue, operator) => {
   switch (operator) {
     case '+':
@@ -13,7 +14,6 @@ const getResult = (firstValue, secondValue, operator) => {
     default: return null;
   }
 };
-const operators = ['+', '-', '*'];
 const getTaskAndCorrectAnswer = () => {
   const randomOperator = operators[randomValue(0, operators.length - 1)];
   const firstRandValue = randomValue(1, 100);
