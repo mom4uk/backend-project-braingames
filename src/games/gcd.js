@@ -9,10 +9,10 @@ const getGreatestCommonDenom = (firstValue, secondValue) => {
   return getGreatestCommonDenom(secondValue, firstValue % secondValue);
 };
 const getTaskAndCorrectAnswer = () => {
-  const firstRandValue = randomValue(1, 100);
-  const secondRandValue = randomValue(1, 100);
-  const question = `${firstRandValue} ${secondRandValue}`;
-  const correctAnswer = String(getGreatestCommonDenom(firstRandValue, secondRandValue));
+  const firstRandomValue = randomValue(1, 100);
+  const secondRandomValue = randomValue(1, 100);
+  const question = `${firstRandomValue} ${secondRandomValue}`;
+  const correctAnswer = String(getGreatestCommonDenom(firstRandomValue, secondRandomValue));
   return [question, correctAnswer];
 };
 const startGameGcd = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
