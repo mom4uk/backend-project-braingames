@@ -13,10 +13,10 @@ First node.js project. (Hexlet)
 Five mini-games on the command line are played one after another. Purpose: to answer correctly 3 tasks. After a successful completion or error, the next game begins.
 
 ### Games 
-- Brain-even (You need to find out if the number is even.)
-- Brain-calc (You need to calculate several expressions.)
-- Brain-gcd (You need to know the greatest common divisor.)
-- Brain-progression (You need to find out the missing number in arithmetic progression.)
-- Brain-prime (You need to recognize if a prime number.)
+- Brain-even (To find out the even number.)
+- Brain-calc (To calculate several expressions.)
+- Brain-gcd (To know the greatest common divisor.)
+- Brain-progression (To find out the missing number in arithmetic progression.)
+- Brain-prime (To find out the prime number.)
 
 [![asciicast](https://asciinema.org/a/n69Qk9Mcxe4VRgkL99yG6SkGI.svg)](https://asciinema.org/a/n69Qk9Mcxe4VRgkL99yG6SkGI)
