@@ -3,7 +3,7 @@ import randomValue from '../utils';
 
 const descriptionTask = 'What number is missing in the progression?';
 const lengthProgression = 10;
-let replacedNumberInArray = '';
+let replacedValueInArray = '';
 const getArithmeticProgression = (progressionMember, progressionDifference) => {
   const array = [];
   for (let i = 0; i <= lengthProgression; i += 1) {
@@ -15,19 +15,19 @@ const getTaskAndCorrectAnswer = () => {
   const progressionMember = randomValue(0, 100);
   const progressionDifference = randomValue(0, 100);
   const randomIndex = randomValue(0, lengthProgression);
-  const numbersArithmeticProgression = getArithmeticProgression(progressionMember,
+  const valuesArithmeticProgression = getArithmeticProgression(progressionMember,
     progressionDifference);
   const getQuestion = (array) => {
     for (let i = 0; i <= array.length; i += 1) {
       if (randomIndex === i) {
-        replacedNumberInArray = `${array[i]}`;
+        replacedValueInArray = `${progressionMember + progressionDifference * i}`;
       }
     }
     array.splice(randomIndex, 1, '..');
     return array.join(' ');
   };
-  const question = getQuestion(numbersArithmeticProgression);
-  const correctAnswer = replacedNumberInArray;
+  const question = getQuestion(valuesArithmeticProgression);
+  const correctAnswer = replacedValueInArray;
   return [question, correctAnswer];
 };
 const startGameProgression = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
