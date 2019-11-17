@@ -6,7 +6,7 @@ const lengthProgression = 10;
 let replacedValueInArray = '';
 const getArithmeticProgression = (progressionMember, progressionDifference) => {
   const array = [];
-  for (let i = 0; i <= lengthProgression; i += 1) {
+  for (let i = 0; i <= lengthProgression - 1; i += 1) {
     array.push(progressionMember + progressionDifference * i);
   }
   return array;
@@ -18,7 +18,7 @@ const getTaskAndCorrectAnswer = () => {
   const valuesArithmeticProgression = getArithmeticProgression(progressionMember,
     progressionDifference);
   const getQuestion = (array) => {
-    for (let i = 0; i <= array.length; i += 1) {
+    for (let i = 0; i <= array.length - 1; i += 1) {
       if (randomIndex === i) {
         replacedValueInArray = `${progressionMember + progressionDifference * i}`;
       }
