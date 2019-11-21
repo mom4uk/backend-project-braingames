@@ -1,4 +1,4 @@
-import startTheEngine from '..';
+import engine from '..';
 import randomValue from '../utils';
 
 const descriptionTask = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -8,5 +8,5 @@ const getTaskAndCorrectAnswer = () => {
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
-const startGameEven = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
+const startGameEven = () => engine(descriptionTask, getTaskAndCorrectAnswer);
 export default startGameEven;

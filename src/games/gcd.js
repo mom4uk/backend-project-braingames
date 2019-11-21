@@ -1,4 +1,4 @@
-import startTheEngine from '..';
+import engine from '..';
 import randomValue from '../utils';
 
 const descriptionTask = 'Find the greatest common divisor of given numbers.';
@@ -15,5 +15,5 @@ const getTaskAndCorrectAnswer = () => {
   const correctAnswer = String(getGreatestCommonDenom(firstRandomValue, secondRandomValue));
   return [question, correctAnswer];
 };
-const startGameGcd = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
+const startGameGcd = () => engine(descriptionTask, getTaskAndCorrectAnswer);
 export default startGameGcd;

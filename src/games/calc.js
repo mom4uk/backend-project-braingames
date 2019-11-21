@@ -1,4 +1,4 @@
-import startTheEngine from '..';
+import engine from '..';
 import randomValue from '../utils';
 
 const descriptionTask = 'What is the result of the expression?';
@@ -22,5 +22,5 @@ const getTaskAndCorrectAnswer = () => {
   const correctAnswer = String(getResult(firstRandomValue, secondRandomValue, randomOperator));
   return [question, correctAnswer];
 };
-const startGameCalc = () => startTheEngine(descriptionTask, getTaskAndCorrectAnswer);
+const startGameCalc = () => engine(descriptionTask, getTaskAndCorrectAnswer);
 export default startGameCalc;

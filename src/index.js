@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const cyclesCount = 3;
-const startTheEngine = (descriptionTask, getTaskAndCorrectAnswer) => {
+const engine = (descriptionTask, getTaskAndCorrectAnswer) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${descriptionTask}`);
   const userName = readlineSync.question('May I have your name? ');
@@ -20,4 +20,4 @@ const startTheEngine = (descriptionTask, getTaskAndCorrectAnswer) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-export { startTheEngine as default };
+export { engine as default };
