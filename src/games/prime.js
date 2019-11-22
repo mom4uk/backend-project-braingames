@@ -2,7 +2,11 @@ import engine from '..';
 import randomValue from '../utils';
 
 const descriptionTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (value) => {
+  for (let i = 1; i < 20; i += 1) {
+    console.log(randomValue(1,2));
+  }
   for (let i = 2; i <= value / 2; i += 1) {
     if (value % i === 0) {
       return false;

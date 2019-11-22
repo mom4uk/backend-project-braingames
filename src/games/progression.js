@@ -3,7 +3,6 @@ import randomValue from '../utils';
 
 const descriptionTask = 'What number is missing in the progression?';
 const lengthProgression = 10;
-let replacedValueInArray = '';
 const getArithmeticProgression = (progressionMember, progressionDifference) => {
   const valuesProgression = [];
   for (let i = 0; i <= lengthProgression - 1; i += 1) {
@@ -12,6 +11,7 @@ const getArithmeticProgression = (progressionMember, progressionDifference) => {
   return valuesProgression;
 };
 const getTaskAndCorrectAnswer = () => {
+  let replacedValueInArray = '';
   const progressionMember = randomValue(0, 100);
   const progressionDifference = randomValue(0, 100);
   const randomIndex = randomValue(0, lengthProgression);
