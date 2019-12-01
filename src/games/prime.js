@@ -9,8 +9,12 @@ const isPrime = (value) => {
       return false;
     }
   }
+  if (value < 2) {
+    return false;
+  }
   return true;
 };
+console.log(isPrime(0),isPrime(32),isPrime(25),isPrime(31),isPrime(23),isPrime(37),isPrime(61),isPrime(67));
 const getTaskAndCorrectAnswer = () => {
   const question = randomValue(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
