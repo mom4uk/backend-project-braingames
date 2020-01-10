@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/mom4uk/backend-project-braingames.svg?branch=master)](https://travis-ci.org/mom4uk/backend-project-braingames)
 
 # Brain-games
-First node.js project. (Hexlet)
+First node.js project.
 
 ### Run
 ```bash
